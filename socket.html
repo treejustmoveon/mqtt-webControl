@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+{%raw%}
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title></title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="margin:0 auto;background-color: #f69d9d;">
+        <a class="navbar-brand" href="/">小车历史轨迹</a>
+        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/car">小车控制</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div>
+        <table class="table table-striped  text-center">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">序号</th>
+                    <th scope="col">第一距离</th>
+                    <th scope="col">第二距离</th>
+                    <th scope="col">第三距离</th>
+                    <th scope="col">x轴距离</th>
+                    <th scope="col">y轴距离</th>
+                </tr>
+            </thead>
+            <tbody id="list-tab">
+                <tr v-for="car in cars" v-bind:key="car[0]">
+                    <th scope="row" class="table-secondary">{{ car[0] }}</th>
+                    <td class="table-primary">{{ car[1] }}</td>
+                    <td class="table-success">{{ car[2] }}</td>
+                    <td class="table-danger">{{ car[3] }}</td>
+                    <td class="table-info">{{ car[4] }}</td>
+                    <td class="table-warning">{{ car[5] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.dev.js"></script>
+    <script src="../static/index.js"></script>
+</body>
+{%endraw%}
+
+</html>

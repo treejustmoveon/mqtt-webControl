@@ -1,0 +1,56 @@
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="1" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <title>我的车辆</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="#">小车历史轨迹</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/car">小车控制</a>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <table class="table table-striped  text-center">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">序号</th>
+          <th scope="col">第一距离</th>
+          <th scope="col">第二距离</th>
+          <th scope="col">第三距离</th>
+          <th scope="col">x轴距离</th>
+          <th scope="col">y轴距离</th>
+        </tr>
+      </thead>
+      <tbody id="list-tab">
+        {%for car in cars%}
+        <tr>
+          <th scope="row" class="table-secondary">{{ car.log }}</th>
+          <td class="table-primary">{{ car.firstdistance }}</td>
+          <td class="table-success">{{ car.seconddistance }}</td>
+          <td class="table-danger">{{ car.thirddistance }}</td>
+          <td class="table-info">{{ car.locationx }}</td>
+          <td class="table-warning">{{ car.locationy }}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="../static/index.js"></script> -->
+</body>
+
+</html>
